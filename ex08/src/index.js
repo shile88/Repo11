@@ -1,10 +1,15 @@
 function largestNumFromArr(arr){
-    var maxNumArray = [];
-
-    for(var i=0; i < arr.length; i++){
-        maxNumArray.push(Math.max(...arr[i]));
+    var topArr = [];
+    for(var i = 0; i < arr.length; i++){
+        top = 0;
+        for(var k = 0; k < arr[i].length; k++){
+            if(arr[i][k] > top){
+                top = arr[i][k];
+            }
+        }
+        topArr.push(top);
     }
-    return maxNumArray;
+    return topArr;
 }
 
 console.log(largestNumFromArr([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857,
